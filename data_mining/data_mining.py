@@ -67,7 +67,7 @@ class SpotifyDataMining:
         playlists = []
         genres_list = []
         for genre in genres:
-            linsting = self.sp.category_playlists(category_id=genre, limit=1)
+            linsting = self.sp.category_playlists(category_id=genre, limit=50)
             for instance in linsting['playlists']['items']:
                 playlists.append(instance['uri'])
                 genres_list.append(genre)
@@ -78,7 +78,7 @@ class SpotifyDataMining:
         playlists = []
         genres_list = []
         for genre in genres:
-            playlists_list = self.sp.category_playlists(category_id=genre, limit=1)
+            playlists_list = self.sp.category_playlists(category_id=genre, limit=50)
             for instance in playlists_list['playlists']['items']:
                 playlists.append(instance['uri'])
                 genres_list.append(genre)
